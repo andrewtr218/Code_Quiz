@@ -1,0 +1,2 @@
+1. When should I use period vs square brackets in javascript?
+2. How do I determine the length of a question?
