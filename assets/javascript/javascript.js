@@ -19,7 +19,7 @@ var qArr = [
 
 // var ansNum = ("What answer would you like to pick?")
 
-function ask(){
+
 
     // var qTitle = qArr[qNum].title;
     // var options = qArr[qNum].choices;
@@ -45,12 +45,12 @@ function ask(){
     // alert(qNum);
     // alert("javascript is working");
 
-init();
+
 
 function ansCheck1(){
-  if (document.getElementById("ans" + (2)).textContent === qArr[0].choices[1]){
+  if (document.getElementById("ans" + 2).textContent === qArr[0].choices[1]){
     alert("the comparison works");
-  document.getElementById("ans1").addEventListener("click",next());
+}
 };
 
     // for verification for javascript click action try setting attribute (may add permanence). Otherwise make the answer array.
@@ -72,10 +72,8 @@ function next(){
     // }
 };
 
-ask();
-ansCheck1()
 
-function init(){}
+function init(){
 for(i = 0; i < 4; i++){
 
   document.getElementById("ans" + (i + 1)).innerText = qArr[0].choices[i];
@@ -83,3 +81,9 @@ for(i = 0; i < 4; i++){
   document.getElementById("ans" + (i + 1)).innerText = qArr[0].choices[i];
   document.getElementById("ans" + (i + 1)).innerText = qArr[0].choices[i];
   };
+
+while()
+init();
+
+
+document.getElementById("ans1").addEventListener("click",next()
