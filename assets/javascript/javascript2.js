@@ -16,6 +16,8 @@ var aArr = [qArr[0] , qArr[1]];
 var a=0;
 
 var score = (0);
+document.getElementById("score").textContent=("Score: " + 0);
+
 
 function init(a){
     for(i = 0; i < 4; i++){
@@ -33,6 +35,17 @@ function init(a){
 
 function wrong(){
     alert("Wrong!");
+        if (score >= 0);{
+
+            score += 0;
+        };
+
+        else{
+            score -= 1;
+
+        };
+        document.getElementById("score").textContent = ("Score: " + score);
+        init(1);
 };
 
 function right(){
