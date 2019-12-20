@@ -20,7 +20,7 @@ function initializeQuestion() {
   let currentQ = qArr[currentQuestion];
   showTimeLeft()
   document.querySelector('#question-title').innerHTML = currentQ.title
-  document.querySelector('#game-score').innerHTML = playerScore
+  document.querySelector('#game-score').innerHTML = `Your current score: ${playerScore}`;
 
   flushButtons();
 
@@ -78,6 +78,9 @@ function flushButtons() {
 function initializeGame() {
   playerName = document.querySelector('#name').value;
 
+  if (playerName === ''){
+    return;
+  };
   document.querySelector('#main-game').removeAttribute('style')
   document.querySelector('#intro').setAttribute('style', 'display:none;')
   initializeTimer();
@@ -111,21 +114,31 @@ function endGame() {
   document.querySelector('#main-game').setAttribute('style', 'display:none;')
 
   let scores = JSON.parse(localStorage.getItem('scores') || '[]')
-  let scoreStr = '<table>'
+  // let scoreStr = '<table>'
+  let scoreStr = '';
   scores.push({
     name: playerName,
     score: playerScore
-  })
+  });
 
-  localStorage.setItem('scores', JSON.stringify(scores))
+  localStorage.setItem('scores', JSON.stringify(scores));
 
   for (let i = 0; i < scores.length; i++) {
-      scoreStr += `<tr><td>${scores[i].name}</td><td>${scores[i].score}</td></tr>`
+      scoreStr += `<div class="row"><div class="col c1">${scores[i].name}</div><div class="col c2">${scores[i].score}</div></div>`;
       // scoreStr += '<td>'+scores+'</td>'
-  }
+  };
 
-  scoreStr += '</table>'
+  // scoreStr += '</table>'
 
   document.querySelector('#end-score').innerHTML = scoreStr
 
+}
+
+function reset() {
+  document.querySelector('#intro').removeAttribute('style');
+  document.querySelector('#end').setAttribute('style', 'display:none;');
+  document.querySelector('#name').value = '';
+  playerName = '';
+  playerScore = 0;
+  currentQuestion = 0;
 }

@@ -2,12 +2,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <title>Ole' Quiz</title>
   </head>
   <body>
+    
     <div id="main-game" style="display: none;">
       <div id="timer"></div>
-      <h1 id="question-title"></h1>
+      <div id="question-title"></div>
       <div id="answer-buttons-block">
 
       </div>
@@ -20,12 +25,16 @@
       </div>
     </div>
     <div id="intro">
-      <input id="name" type="text"/>
-      <div onclick="initializeGame();">Start Quiz</div>
+      <!-- <input id="name" type="text"/>
+      <div onclick="initializeGame();">Start Quiz</div> -->
+      <div class="title">Our beautiful title</div>
+      <input placeholder="Please type your name here!" id="name" type="text"/>
+      <div id="intro-start-button" onclick="initializeGame();">Start Quiz</div>
     </div>
     <div id="end" style="display: none;">
-      It's over old man
+      <div class="title">It's Over Old Man</div>
       <div id="end-score"></div>
+      <div id="return-to-intro" onclick="reset();">Retry!</div>
     </div>
     <script src="./assets/javascript/javascript3.js"></script>
   </body>
